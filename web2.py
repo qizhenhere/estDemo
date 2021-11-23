@@ -4,12 +4,12 @@ import pickle
 import streamlit as st
 
 #导入模型
-model_st = pickle.load(open('D:\\edu\\app_streamlit\\gs_xgb2.pkl', 'rb'))
+model_st = pickle.load(open('gs_xgb2.pkl', 'rb'))
 
 st.title('智能评价系统')
 
 st.subheader('下载Excel模板')
-with open('D:\\edu\\app_streamlit\\模板.xlsx', 'rb') as file:
+with open('模板.xlsx', 'rb') as file:
     btn = st.download_button(label='下载', data=file, file_name='模板.xlsx')
 
 st.subheader('上传Excel数据')
