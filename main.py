@@ -5,7 +5,7 @@ import streamlit as st
 #导入模型
 model_st = pickle.load(open('gs_xgb2.pkl', 'rb'))
 
-st.title('智能评价系统')
+st.title('定向钻孔注浆效果智能评价系统')
 
 st.subheader('下载Excel模板')
 with open('模板.xlsx', 'rb') as file:
@@ -28,8 +28,8 @@ def main():
             result = predict_b(uploaded_file=uploaded_file)
         except:
             return
-    st.success('评价结果:{}'.format(result))
-    st.write("1:达标，2：合格，3：相对薄弱")
+        st.success('评价结果:{}'.format(result))
+        st.write("1:达标，2：合格，3：相对薄弱")
 
 if __name__ == '__main__':
     main()
